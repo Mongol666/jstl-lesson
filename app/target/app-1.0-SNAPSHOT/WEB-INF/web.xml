@@ -104,4 +104,14 @@
         <servlet-name>JSP_Example_10</servlet-name>
         <url-pattern>/example_10</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>JSP_Example_11</servlet-name>
+        <jsp-file>/jstl_example_11.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>JSP_Example_11</servlet-name>
+        <url-pattern>/example_11</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -17,6 +17,6 @@ public class FirstJSTLServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Department> departmentList = DBUtils.queryDepartments();
         req.setAttribute("departments", departmentList);
-        req.getRequestDispatcher("/example_10").forward(req, resp);
+        req.getRequestDispatcher("/example_11").forward(req, resp);
     }
 }
