@@ -11,16 +11,20 @@
                        user="mongol" password="Gurmanidze01"
         url="jdbc:postgresql://localhost:5432/dbit" />
     <sql:query dataSource="${datasource}" var="result" >
-        SELECT * FROM employee;
+        <%--language=SQL--%>
+        SELECT e.id as id, e.name as name, e.salary as salary, t.name as title_name
+        FROM employee e
+        RIGHT JOIN title t
+        ON t.id = e.title_id;
     </sql:query>
 
     <h3>
         <table border="1" width="100%">
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Salary</th>
-                <th>Title (ID)</th>
+                <th>Имя</th>
+                <th>Зарплата</th>
+                <th>Должность</th>
             </tr>
             <c:forEach var="employee" items="${result.rows}">
                 <tr>
@@ -34,7 +38,7 @@
                         <c:out value="${employee.salary}"/>
                     </td>
                     <td>
-                        <c:out value="${employee.title_id}"/>
+                        <c:out value="${employee.title_name}"/>
                     </td>
                 </tr>
             </c:forEach>
